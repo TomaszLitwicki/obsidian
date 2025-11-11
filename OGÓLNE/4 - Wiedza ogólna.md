@@ -1,0 +1,6 @@
+- **Akronim** - skrótowiec, wyraz utworzony z pierwszych liter lub sylab składających się na inne wyrażenie ZUS, HTTP...
+- **Anagram** - wyraz powstały przez przestawienie liter wyrazu źródłowego. W Matrix'ie Neo-One(wybraniec)
+- FOMO - Fear of Missing Out: Uczucie, że cały czas coś nas omija, więc cały czas trzeba próbować czegoś nowego, a praca i tak stoi w miejscu.
+- BUYER'S REMORSE - wyrzuty sumienia kupującego: Rozwiązanie wybrane wcale nie jest tym najlepszym :( 
+- PAGINACJA - to proces numerowania kolejnych stron dokumentu, publikacji, a także dzielenia dużych zbiorów danych na mniejsze fragmenty wyświetlane na oddzielnych stronach.
+- 

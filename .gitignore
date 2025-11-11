@@ -1,0 +1,14 @@
+# Obsidian
+.obsidian/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/obsidian-git/data.json
+.trash/
+# Systemowe
+.DS_Store
+Thumbs.db
+desktop.ini
+# Ewentualnie duże śmieci:
+*.mp4
+*.zip

@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"bbd83ee10d4d36ec","type":"text","text":"S\nM\nA\nR\nT","x":20,"y":-280,"width":60,"height":292,"color":"1"},
+		{"id":"6032a2f23883341e","type":"text","text":"SPECIFIC (skoncentryzowany)","x":180,"y":-280,"width":320,"height":50,"color":"3"},
+		{"id":"aefbd655ee11c21d","type":"text","text":"MEASURABLE (mierzalny)","x":180,"y":-220,"width":320,"height":50,"color":"3"},
+		{"id":"663e563ce03ee138","type":"text","text":"ACHIEVABLE (osiągalny)","x":180,"y":-160,"width":320,"height":50,"color":"3"},
+		{"id":"bda7038019418c21","type":"text","text":"RELEVANT (istotny)","x":180,"y":-100,"width":320,"height":50,"color":"3"},
+		{"id":"180518d6712a7eef","type":"text","text":"TIME-BOUND (określony w czasie)","x":180,"y":-38,"width":320,"height":50,"color":"3"},
+		{"id":"9386d0059c0bdfed","type":"text","text":"Zostać PROGRAMISTĄ Python Developer'em\n\nPracować na Umowę o Pracę\n\n6 mies. - do końca 2025 - Opanować swobodnie język programowania i komunikacyjnie j. ang.\n9mies. - wiosna 2026 - Zacząć chodzić na rozmowy kwalifikacyjne\n12 mies. - do wakacji 2026 - Opanować umiejętności Junior Developer\n\nI etap - bezpłatny staż (do 3 miesięcy)\nII etap - zarabiać jakiekolwiek pieniądze z programowania (do 6 mies.) i móc pracować już hybrydowo.\nIII etap - zarabiać min. 6 tyś netto/mies. i pracować głównie zdalnie zostając przy zwierzętach.","x":582,"y":-285,"width":858,"height":297,"color":"4"},
+		{"id":"3fa9c5c18715c8cf","type":"text","text":"[https://youtu.be/fmQZkoXUey0?si=p-wyn3oiJtyqf7xq]()","x":-520,"y":-164,"width":472,"height":60,"color":"6"}
+	],
+	"edges":[
+		{"id":"6fa02f65a8f978c8","fromNode":"bbd83ee10d4d36ec","fromSide":"right","toNode":"6032a2f23883341e","toSide":"left","color":"3"},
+		{"id":"e3494596ab6b2a25","fromNode":"bbd83ee10d4d36ec","fromSide":"right","toNode":"aefbd655ee11c21d","toSide":"left","color":"3"},
+		{"id":"d2c93cfdacbb0162","fromNode":"bbd83ee10d4d36ec","fromSide":"right","toNode":"663e563ce03ee138","toSide":"left","color":"3"},
+		{"id":"9ba84f1e432ef1f2","fromNode":"bbd83ee10d4d36ec","fromSide":"left","toNode":"3fa9c5c18715c8cf","toSide":"right","color":"6"},
+		{"id":"cbb54792a0509cb5","fromNode":"bbd83ee10d4d36ec","fromSide":"right","toNode":"bda7038019418c21","toSide":"left","color":"3"},
+		{"id":"830697a8a5e1a4f5","fromNode":"bbd83ee10d4d36ec","fromSide":"right","toNode":"180518d6712a7eef","toSide":"left","color":"3"},
+		{"id":"23f9f5734cda1fec","fromNode":"6032a2f23883341e","fromSide":"right","toNode":"9386d0059c0bdfed","toSide":"left","color":"4"},
+		{"id":"5159728b93ba9006","fromNode":"180518d6712a7eef","fromSide":"right","toNode":"9386d0059c0bdfed","toSide":"left","color":"4"},
+		{"id":"a101b82c5c8706e9","fromNode":"bda7038019418c21","fromSide":"right","toNode":"9386d0059c0bdfed","toSide":"left","color":"4"},
+		{"id":"84c0b5b8602f6307","fromNode":"663e563ce03ee138","fromSide":"right","toNode":"9386d0059c0bdfed","toSide":"left","color":"4"},
+		{"id":"305b7c9f77e46b78","fromNode":"aefbd655ee11c21d","fromSide":"right","toNode":"9386d0059c0bdfed","toSide":"left","color":"4"}
+	]
+}
