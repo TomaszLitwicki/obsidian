@@ -12,6 +12,7 @@ my_dict = {
 
 Sposób pytania o wartość słownika:
 `my_dict.get('Tomasz')` - NONE gdy nie figuruje
+`my_dict.get('Andrzej', 'Nie ma')` - "Nie ma" gdy nie figuruje
 `my_dict['Tomasz']` - błąd gdy nie figuruje
 
 Dodawanie do słownika (i zmienianie):

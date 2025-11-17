@@ -8,6 +8,7 @@
 [[D - PROGRAMOWANIE OBIEKTOWE]]
 [[E - BIBLIOTEKI]]
 [[F - REST API]]
+[[G - BAZY DANYCH]]
 
 [[X - TESTY]]
 

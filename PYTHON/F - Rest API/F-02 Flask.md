@@ -62,7 +62,7 @@ def add_user():
 ```Python
 @app.route('/users', methods=['PUT'])
 def update_user():
-    return "Aktualizacja użytkownika..."
+    return "Aktualizacja całego użytkownika..."
 ```
 
 ```Python
@@ -142,12 +142,12 @@ app = Flask(__name__)
 def user_not_found():
     return jsonify({'error': 'Użytkownik nie został znaleziony'}), 404
 
-
 def find_user_by_id(user_id):
     for user in all_users:
         if user.user_id == user_id:
             return user
     return None
+    
 @app.route('/')
 def hello_word():
     return 'Tu aplikacja Flaska... z trybem debudowania i zmianą portu '
@@ -164,7 +164,6 @@ def user_one(user_id):
         return user_not_found()
 
     return jsonify(user)
-
 
 @app.route('/users/', methods=['POST'])
 def add_user():
@@ -187,7 +186,6 @@ def update_user(user_id):
 
     return jsonify(user)
 
-
 @app.route('/users/<int:user_id>/', methods=['PATCH'])
 def partially_update_user(user_id):
     data = request.json
@@ -203,8 +201,6 @@ def partially_update_user(user_id):
 
     return jsonify(user)
 
-
-
 @app.route('/users/<int:user_id>/', methods=['DELETE'])
 def delete_user(user_id):
     global all_users
@@ -215,7 +211,6 @@ def delete_user(user_id):
 
     all_users = [u for u in all_users if u.user_id != user_id]
     return '', 204
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
