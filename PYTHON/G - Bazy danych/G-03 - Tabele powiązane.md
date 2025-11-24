@@ -11,7 +11,8 @@ SELECT id from user WHERE username = 'Cowboy'; {zwraca po prostu numer id}
 ```
 
 ## Złączenia tabel
-JOIN
+JOIN:
+
 ```SQL
 SELECT user.id, post.id, username, body FROM user
 JOIN post ON user.id = post.user_id;

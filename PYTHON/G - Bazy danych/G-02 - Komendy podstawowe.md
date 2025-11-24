@@ -3,7 +3,20 @@
 ctrl + Enter - wykonanie kodu.
 
 ## Kolejność
-SELECT → FROM → JOIN → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT
+### wpisywania
+SELECT → FROM → JOIN ON→ WHERE → AGREGACJE → GROUP BY → HAVING → ORDER BY → LIMIT
+
+### działania SQL
+FROM/JOIN → WHERE → GROUP BY → AGREGACJE → HAVING → SELECT → ORDER BY → LIMIT
+
+1. FROM/JOIN → Zbierz dane
+2. WHERE → Odfiltruj pojedyncze wiersze
+3. GROUP BY → Zbij wiersze w grupę
+4. AGREGACJE → Policz coś dla każdej grupy
+5. HAVING → Odfiltruj całe grupy
+6. SELECT → Wybierz co wyświetlić
+7. ORDER BY → Jak to posortować
+8. LIMIT → Ile wyświetlić
 ## Wyświetlanie tabeli
 ```SQL
 SELECT * FROM user; {ale tego nie robimy z *}
@@ -60,7 +73,8 @@ Różny, odmienny - aby wyświetlane wartości się nie powtarzały
 ```SQL
 SELECT DISTINCT last_name FROM user {nazwiska się już nie powtarzają}
 ```
-### MIN, MAX, SUM, AVG, COUNT
+### AGREGACJE: MIN, MAX, SUM, AVG, COUNT
+Działają na wielu wierszach naraz.
 ```SQL
 SELECT sum(age) FROM user 
 SELECT AVG(age) FROM user {średnia wiaku}
@@ -69,6 +83,13 @@ SELECT * FROM user WHERE age >= 40 {wyświetlanie selektywne}
 SELECT COUNT(*) FROM user WHERE age >= 40 {zlicza ilość rekordów spełniających warunek}
 ```
 
+## Pojedyncze funkcje
+Działają na pojedynczych rekordach, zmieniają pojedynczą komórkę
+```SQL
+LENGTH() → ile danych zajmuje tekst w pamięci
+CHAR_LENGTH() → ile rzeczywiście jest znaków
+
+```
 ## Aktualizowanie i usuwanie rekordów
 UWAGA!!!
 `UPDATE user SET username = 'Mama'` - TO ZAKTUALIZUJE WSZYSTKICH UŻYTKOWNIKÓW!
