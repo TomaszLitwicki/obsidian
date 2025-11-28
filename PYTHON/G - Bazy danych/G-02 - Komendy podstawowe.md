@@ -1,4 +1,4 @@
-`USE nazwa_bazy_danych;`
+ `USE nazwa_bazy_danych;`
 `SELECT * FROM nazwa_tabeli;`
 ctrl + Enter - wykonanie kodu.
 
