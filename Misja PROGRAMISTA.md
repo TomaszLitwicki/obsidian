@@ -9,7 +9,16 @@
 [[E - BIBLIOTEKI]]
 [[F - REST API]]
 [[G - BAZY DANYCH]]
-
+H - GUI
+Pozostałe technologie GUI Python:
+1. https://streamlit.io/
+2. https://taipy.io/
+3. https://kivy.org/
+4. https://flet.dev/
+5. https://google.github.io/mesop/
+6. https://reflex.dev/
+7. https://justpy.io/
+8. https://www.gradio.app/guides/quickstart
 [[X - TESTY]]
 
 # READY 4 AI:
