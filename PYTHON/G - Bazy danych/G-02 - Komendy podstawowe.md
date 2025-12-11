@@ -100,3 +100,45 @@ Ale jest tryb zabezpieczenia i albo podaje się po Primary Key - czyli ID albo w
 UPDATE user SET username = 'Mały', age = 4 WHERE id = 4;
 DELETE FROM user WHERE username = 'Maruda' LIMIT 1; {zabezpieczenie LIMIT 1}
 ```
+
+
+## Filtrowanie rekordów zaczynających się od cyfry (MySQL)
+
+**Cel:** wybrać wszystkie rekordy, w których kolumna zaczyna się od cyfry (0–9).
+
+### Najprostsze rozwiązanie (REGEXP)
+
+```
+SELECT *
+FROM tabela
+WHERE kolumna REGEXP '^[0-9]';
+```
+
+- `^` — początek tekstu
+- `[0-9]` — dowolna cyfra
+
+### Wersja bardziej standardowa (klasa znaków)
+
+```
+WHERE kolumna REGEXP '^[[:digit:]]';
+```
+
+### Dodatkowe przydatne warianty
+
+**Zaczyna się od litery:**
+
+```
+WHERE kolumna REGEXP '^[A-Za-z]';
+```
+
+**Zawiera cyfrę gdziekolwiek:**
+
+```
+WHERE kolumna REGEXP '[0-9]';
+```
+
+**Zawiera tylko cyfry:**
+
+```
+WHERE kolumna REGEXP '^[0-9]+$';
+```

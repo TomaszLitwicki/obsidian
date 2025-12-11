@@ -36,7 +36,7 @@ operatory warunkowe:
 AND
 OR
 IS
-# 3 DELETE UPDATE
+# 3 DELETE i UPDATE
 DELETE FROM nazwa_tabeli WHERE nazwy_kolumn {operatory};
 UPDATE nazwa_tabeli SET kolumna1 = 'nowa_wartość', kolumna2 = 'inna_wartość';
 # 4 TABELE ZNORMALIZOWANE - Projektowanie
@@ -58,6 +58,39 @@ SHOW COLUMNS FROM nazwa_tabeli; pokazuje tabelę kolumn jak (skrót: DESC lub DE
 SHOW INDEX FROM nazwa_tabeli; - pokazuje indeksy tabeli jak PRIMARY KEY.
 SHOW WARNINGS; - pokazuje ostrzenienia.
 
-ALTER - dodawanie nowej kolumny... na przykład id primary key
-ALTER TABLE nazwa ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (id);
+# 5 ALTER
+DODAWANIE / ZMIANA / MODYFIKACJA / USUWANIE / (KOLEJNOŚĆ - tylko AFTER!)
+ALTER TABLE nazwa_tabeli 
+- RENAME TO nawa_nazwa_tabeli;
+- ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (id);
+- CHANGE COLUMN nazwa_kolumny nowa_nazwa TYPZMIENNEJ;
+- MODIFY COLUMN nazwa_kolumny NOWYTYPZMIENNEJ AFTER za_czym_ma_stać;
+- DROP COLUMN nazwa_kolumny;
 
+FUNKCJE ŁAŃCUCHOWE CHAR i VARCHAR:
+- SUBSTRING_INDEX (nazwa_kolumny, 'znak_rozdzielający', index_znaku)
+- RIGHT(kolumna, ilosc_znakow_z_prawej_strony)
+- SUBSTRING(lancuch, od_ktorego_znaku, ile_znakow)
+- UPPER
+- LOWER
+- REVERSE
+- LTIRM - usuwa białe znaki z lewej
+- RTRIM - usuwa biełe znaki z prawej
+- LENGTH
+
+# 6 CASE
+```SQL
+UPDATE nazwa_tabeli
+SET nowa_kolumna =
+CASE
+	WHEM kolumna1 = wartość1
+		THEN nowa_wartość1
+	WHEN kolumna2 = wartość2
+		THEN nowa_wartość2
+	ELSE nowa_wartość3
+END;
+```
+
+```SQL
+U
+```
