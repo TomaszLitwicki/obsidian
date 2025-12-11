@@ -10,4 +10,5 @@
 10. ASCII - American Standard Code for Information Interchange
 11. IDE - Integrated Development Environment[^1] (Zintegrowane Środowisko Programistyczne)
 12. NSFW - Not Safe For Work
-13. 
+13. TL;DR - Too Long; Didn't Read
+14. RDBMS - Relational Database Management System

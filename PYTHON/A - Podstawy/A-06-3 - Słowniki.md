@@ -22,6 +22,9 @@ Usuwanie ze słownika:
 `del my_dict['KLUCZ']` - gdy KLUCZ nie istnieje zwraca błąd *KeyError*
 `my_dict.pop['KLUCZ',co_jeśli_klucz_nie_istnieje]` - wartość usuniętego tak klucza można przypisać do jakiejś zmiennej lub zwrócić inną wartość, gdy dany KLUCZ nie istnieje
 
+**CZYSZCZENIE SŁONIKA**
+`my_dict.clear()`
+
 **WYŚWIETLANIE SŁOWNIKA**
 `for el in my_dict:`
 	`print(el)` - wyświetla tylko klucze
