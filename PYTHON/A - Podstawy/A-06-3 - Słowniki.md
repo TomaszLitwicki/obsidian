@@ -39,8 +39,11 @@ Usuwanie ze słownika:
 `for imie, rok_ur in my_dict.items():`
 	`print(imie + " ur. " + str(rok_ur))`
 	Przechodząc przez wszystkie elementy słownika spodziewamy się IMIENIA i ROKU URODZENIA. Zamiast odwoływać się do indeksów el\[0] odwołujemy się do nazw wprowadzonych w pętli. Rozwiązanie ponoć czytelniejsze i lepsze.
-	
-	
+
+
+- `dict` **jako obiekt** → zawsze `klucz: wartość`
+- `dict` **jako iterowalny** → iteruje po kluczach
+- `str(dict)` → pokazuje pełną strukturę
 
 
 

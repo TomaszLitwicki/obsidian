@@ -39,15 +39,10 @@ IS
 # 3 DELETE i UPDATE
 DELETE FROM nazwa_tabeli WHERE nazwy_kolumn {operatory};
 UPDATE nazwa_tabeli SET kolumna1 = 'nowa_wartość', kolumna2 = 'inna_wartość';
-# 4 TABELE ZNORMALIZOWANE - Projektowanie
-**1NF - First Normal Form**
-1. Każdy wiersz danych musi zawierać wartości ATOMOWE
-2. Każdy wiersz danych musi mieć unikalny identyfikator PRIMARY KEY
 
-- Dane ATOMOWE:
-	1. W kolumnie z danymi atomowymi w jednym wierszu tabeli nie może się znajdować kilka wartości tego samego typu.
-	2. W tabeli zawierającej dane atomowe nie może być kilku kolumn zawierających dane tego samego typu.
+# 4 TABELE ZNORMALIZOWANE - edycja tabel i zmiany
 
+EDYCJA TABEL:
 Edycja istniejących tabel:
 SHOW DATABASES; 
 SHOW TABLES;
@@ -68,7 +63,7 @@ ALTER TABLE nazwa_tabeli
 - DROP COLUMN nazwa_kolumny;
 
 FUNKCJE ŁAŃCUCHOWE CHAR i VARCHAR:
-- SUBSTRING_INDEX (nazwa_kolumny, 'znak_rozdzielający', index_znaku)
+- SUBSTRING_INDEX (nazwa_kolumny, 'znak_rozdzielający', index_znaku) 2-pobierze wszystko sprzed 2 przecinka
 - RIGHT(kolumna, ilosc_znakow_z_prawej_strony)
 - SUBSTRING(lancuch, od_ktorego_znaku, ile_znakow)
 - UPPER
@@ -91,6 +86,32 @@ CASE
 END;
 ```
 
-```SQL
-U
+# 7 TABELE ŁĄCZONE
+1. jeden-do-jeden
+2. jeden-do-wielu
+3. wiele-do-wielu -> tabela łącząca
+
+- ZALEŻNOŚĆ FUNKCJONALNA kolumn w tabeli RELACYJNEJ:
+	`nazwa_tabeli.kolumna_wpływowa ->; nazwa_tabeli.kolumna_zależna
+
+
+```sql
+CREATE TABLE zainteresowania (
+id_zainteresowania INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+zainteresowanie VARCHAR(50) NOT NULL,
+id_kontaktu INT NOT NULL,
+CONSTRAINT kontakty_id_kontaktu_fk
+FOREIGN KEY (id_kontaktu)
+REFERENCES kontakty (id)
+);
 ```
+
+# 8 ZŁĄCZENIA
+
+- CROSS JOIN - złączenie kartezjańskie (każde z każdym)
+- INNER JOIN ON warunek_porównania - złączenie uwarunkowane operatorem porównania
+	- = złączenie równościowe
+	- <> złączenie różnościowe
+NATURAL JOIN - złączenie naturalne (rozpoznaje pasujące do siebie nazwy kolumn)
+
+ 
