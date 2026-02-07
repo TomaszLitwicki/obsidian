@@ -60,4 +60,5 @@ wielu plików:
 | `git push`                                   | wypychanie repozytorium do globalnego           |
 | `git pull`                                   | zaciąganie globalnego repozytorium do lokalnego |
 | `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                      |
+| `git fetch`                                  | porównanie z GitHub'em                          |
 
