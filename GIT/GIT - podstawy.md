@@ -33,9 +33,10 @@ wielu plików:
 1. `git add plik-pierwszy.txt plik-drugi.txt` - dodaje wypisane pliki
 2. `git add .` - dodaje wszystkie pliki (zmodyfikowane i nowe)
 3. `git add *` - dodaje tylko pliki z bieżącego folderu, bez podkatalogów, ignoruje pliki ukryte.
-4. `git commit -m "opis zmiany"` - commitowanie do repozytorium
-5. `git commit -am"Wiadomość commita."` - łączy add i commit dla wszystkich zmienionych plików, ale tylko tych, które są już śledzone- tracked.
-6. 
+4. `git add -u` - dodaje tylko modyfikowane pliki bez nowych i nieśledzonych (untracked)
+5. `git commit -m "opis zmiany"` - commitowanie do repozytorium
+6. `git commit -am"Wiadomość commita."` - łączy add i commit dla wszystkich zmienionych plików, ale tylko tych, które są już śledzone- tracked.
+7. 
 
 ## Branche
 `git branch` - lista branchów i roboczy oznaczony \*aktualny

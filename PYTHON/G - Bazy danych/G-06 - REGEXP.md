@@ -117,5 +117,3 @@ REGEXP '^[0-9]+$'
 ```
 
 ---
-
-Chcesz, mogę ci przygotować też ściągę z praktycznymi wzorcami typu „NIP”, „PESEL”, „kod pocztowy”, „email”, „numer telefonu”, wszystko w MySQL REGEXP.

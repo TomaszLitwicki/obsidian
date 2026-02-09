@@ -32,7 +32,7 @@ INSERT INTO USER (username, first_name, last_name, age) VALUES('Cowboy', 'Tomasz
 ## Wyświetlanie selektywne rekordów z bazy
 \* w komendzie SELECT nie używamy gwiazdki!
 \_ podkreślenie zastępuje pojedynczy znak
-\% podkreślenie zastępuje dowolną ilość znaków
+\% procent zastępuje dowolną ilość znaków
 
 ### WHERE
 selekcjonowanie rekordów
