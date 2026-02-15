@@ -63,3 +63,126 @@ wielu plików:
 | `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                      |
 | `git fetch`                                  | porównanie z GitHub'em                          |
 
+## Weryfikacja stanu repozytorium
+
+| Komenda      | Operuje na        | Cel                   |
+| ------------ | ----------------- | --------------------- |
+| `git log`    | historia commitów | analiza przeszłości   |
+| `git diff`   | różnice w plikach | analiza zmian         |
+| `git show`   | jeden commit      | szczegóły zmiany      |
+| `git branch` | struktura repo    | zarządzanie gałęziami |
+
+---
+### `git log`
+
+Wyświetla historię commitów w aktualnym branchu.
+
+* SHA (hash) commita
+* autora
+* datę
+* wiadomość commit
+
+Najważniejsze warianty
+
+```bash
+git log --oneline
+```
+→ skrócony zapis (hash + message)
+
+```bash
+git log --graph --all --oneline
+```
+→ wizualizacja rozgałęzień (bardzo przydatne przy Twojej analizie historii)
+
+```bash
+git log -p
+```
+→ pokazuje zmiany w plikach (patch)
+
+```bash
+git log nazwa_pliku.py
+```
+→ historia tylko jednego pliku
+
+---
+### `git diff`
+
+Pokazuje różnice (diff) między stanami repozytorium.
+
+```bash
+git diff
+```
+→ różnice między working directory a staging area
+
+```bash
+git diff --staged
+```
+→ różnice między staging area a ostatnim commitem
+
+```bash
+git diff main origin/main
+```
+→ różnice między lokalnym a zdalnym branchem
+
+Jak czytać diff:
+```
+- linia usunięta
++ linia dodana
+```
+
+---
+### `git show`
+
+Pokazuje szczegóły konkretnego commita.
+
+```bash
+git show
+```
+→ pokazuje ostatni commit
+
+```bash
+git show 67f7579
+```
+→ pokazuje wskazany commit
+
+Zawiera:
+* metadata
+* diff
+* autor
+* datę
+
+To w praktyce: `git log + git diff` dla jednego commita.
+
+---
+### `git branch`
+
+Zarządzanie branchami.
+
+```bash
+git branch
+```
+→ lista lokalnych branchy
+`*` oznacza aktualny branch
+
+```bash
+git branch -r
+```
+→ branche zdalne
+
+```bash
+git branch -a
+```
+→ wszystkie (lokalne + zdalne)
+
+```bash
+git branch nowy_branch
+```
+→ tworzy nowy branch
+
+```bash
+git checkout nowy_branch
+```
+→ przełącza na branch
+(w nowszych wersjach: `git switch`)
+
+---

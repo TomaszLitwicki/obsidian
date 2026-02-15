@@ -9,8 +9,9 @@
 [[E - BIBLIOTEKI]]
 [[F - REST API]]
 [[G - BAZY DANYCH]]
-H - GUI
-Pozostałe technologie GUI Python:
+[[H - Tips]]
+[[X - TESTY]]
+## Technologie GUI Python:
 1. https://streamlit.io/
 2. https://taipy.io/
 3. https://kivy.org/
@@ -19,7 +20,9 @@ Pozostałe technologie GUI Python:
 6. https://reflex.dev/
 7. https://justpy.io/
 8. https://www.gradio.app/guides/quickstart
-[[X - TESTY]]
+
+# SQL
+[[Rusz Głową]]
 
 # READY 4 AI:
 [[LLM]]
@@ -37,6 +40,7 @@ Stos technologiczny:
 
 # LINUX
 [[01-Podstawy]]
+[[z1 pager]]
 
 # GIT
 [[GIT - podstawy]]
