@@ -27,8 +27,25 @@ KATALOG ROBOCZY -  to ten, w którym obecnie się znajdujemy w terminalu!!
 
 - **Bezwzględna ścieżka**: zawsze zaczyna się od `/` i prowadzi od katalogu głównego. Niezależna od bieżącego katalogu.
 - **Względna ścieżka**: zależy od bieżącego katalogu (`pwd`). Używa `.` i `..` do nawigacji lokalnej.
+
 ---
-### 🧮 Tabela opcji polecenia `ls`
+## 📁 Tabela: Podstawowe polecenia manipulacji plikami i katalogami
+
+|Polecenie|Krótki opis działania|
+|---|---|
+|`touch`|Tworzy pusty plik|
+|`mkdir`|Tworzy nowy katalog|
+|`cp`|Kopiuje plik lub katalog|
+|`mv`|Przenosi lub zmienia nazwę|
+|`rm`|Usuwa plik lub katalog|
+|`rmdir`|Usuwa pusty katalog|
+|`file`|Pokazuje typ pliku|
+|`stat`|Szczegóły o pliku lub katalogu|
+|`ln`|Tworzy dowiązanie twarde|
+|`ln -s`|Tworzy do
+
+---
+## 🧮 Tabela opcji polecenia `ls`
 
 | Opcja                       | Opis działania                                                              | Przykład użycia                |
 | --------------------------- | --------------------------------------------------------------------------- | ------------------------------ |
@@ -59,23 +76,6 @@ KATALOG ROBOCZY -  to ten, w którym obecnie się znajdujemy w terminalu!!
 | `s`           | Gniazdo (socket)       | Plik komunikacyjny między procesami                      |
 | `p`           | Potok nazwany (FIFO)   | Kolejka komunikacyjna między procesami                   |
 Każdy z tych typów może być rozpoznany właśnie po pierwszym znaku w kolumnie uprawnień, np. `drwxr-xr-x` oznacza katalog, a `-rw-r--r--` zwykły plik.
-
----
-
-## 📁 Tabela: Podstawowe polecenia manipulacji plikami i katalogami
-
-|Polecenie|Krótki opis działania|
-|---|---|
-|`touch`|Tworzy pusty plik|
-|`mkdir`|Tworzy nowy katalog|
-|`cp`|Kopiuje plik lub katalog|
-|`mv`|Przenosi lub zmienia nazwę|
-|`rm`|Usuwa plik lub katalog|
-|`rmdir`|Usuwa pusty katalog|
-|`file`|Pokazuje typ pliku|
-|`stat`|Szczegóły o pliku lub katalogu|
-|`ln`|Tworzy dowiązanie twarde|
-|`ln -s`|Tworzy do
 
 ---
 
@@ -114,7 +114,7 @@ Każdy z tych typów może być rozpoznany właśnie po pierwszym znaku w kolumn
 | `*[[:lower:]123]`         | Plików kończących się małą literą lub cyfrą 1, 2, 3                   | plik1, backup2, testa       |
 
 ---
-### 🗂️ Tabela opcji poleceń `cp`, `mv` i `rm`
+## 🗂️ Tabela opcji poleceń `cp`, `mv` i `rm`
 
 | **Polecenie** | **Opcja**           | **Znaczenie**                                                                                     |
 | ------------- | ------------------- | ------------------------------------------------------------------------------------------------- |

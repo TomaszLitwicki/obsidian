@@ -36,7 +36,11 @@ wielu plików:
 4. `git add -u` - dodaje tylko modyfikowane pliki bez nowych i nieśledzonych (untracked)
 5. `git commit -m "opis zmiany"` - commitowanie do repozytorium
 6. `git commit -am"Wiadomość commita."` - łączy add i commit dla wszystkich zmienionych plików, ale tylko tych, które są już śledzone- tracked.
-7. 
+7. `git commit -a` - commitują się tylko edytowane pliki i uruchamia się Vim do napisania komentarza:
+	1. `i` - wchodzi w tryb insert, czyli pisania
+	2. `ESC` - wychodzi z trybu INSERT
+	3. `:wq` - write and quit
+	4. `:q!` - quit bez zapisywania
 
 ## Branche
 `git branch` - lista branchów i roboczy oznaczony \*aktualny
