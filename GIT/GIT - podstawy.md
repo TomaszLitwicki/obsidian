@@ -190,3 +190,36 @@ git checkout nowy_branch
 (w nowszych wersjach: `git switch`)
 
 ---
+
+## Branch'e lokalnie i oneline
+
+| Nazwa         | Co to jest                                 |
+| ------------- | ------------------------------------------ |
+| master        | lokalna gałąź                              |
+| origin        | zdalne repo (GitHub)                       |
+| origin/master | lokalna referencja pokazująca stan GitHuba |
+- `master` → Twój lokalny branch (na którym pracujesz)
+- `origin/master` → “snapshot” tego, jak wygląda `master` na GitHub
+	- Co oznacza `origin/master`?
+		- **`origin`** → nazwa zdalnego repozytorium (remote), zwykle GitHub
+		- **`master`** → gałąź (branch)
+		- **`origin/master`** → _zdalna referencja śledząca_ (remote-tracking branch)
+
+
+Lokalny commit (którego nie ma na GitHub):
+`git log origin/master..master --oneline`
+
+Commit z GitHub (którego nie ma lokalnie):
+`git log master..origin/master --oneline`
+
+Format:
+	`A..B`
+oznacza:
+	pokaż commity, które są w B, ale nie ma ich w A
+
+czyli:
+- `origin/master..master`  
+    → co masz lokalnie, a nie ma na serwerze
+- `master..origin/master`  
+    → co jest na serwerze, a nie ma lokalnie
+---
