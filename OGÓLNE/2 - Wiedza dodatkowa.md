@@ -27,12 +27,27 @@ isinstance(age, int)  # Zwraca True lub False
 
  Python automatycznie przechodzi do nowej lini '\n'. Aby zostać w tej samej można na końcu printa dodać `print("jakiś tekst", end=" ")`
 
-## REGEX Oznaczenia znaków w kodzie
+## REGEX mini-język do pracy z tekstem
+`import re`
 
 \n - enter
 \s - znak biały (spacja, TAB, ENTER)
 \d - cyfra
 \w - litera, cyfra
+\b - granica słowa
+
+^ – początek linii  
+$ – koniec linii  
+\* – 0 lub więcej  
+\+ – 1 lub więcej  
+? – 0 lub 1  
+{n} – dokładnie n razy  
+{n,} – co najmniej n razy  
+{n,m} – od n do m razy  
+() – grupa  
+\[] – klasa znaków  
+\[^...] – negacja klasy znaków
+
 r - row string, surowy łańcuch znaków (nie interpretuje \\) 
 . - dowolny znak
 
@@ -51,14 +66,15 @@ Czyli:
 
 ## regular expressions - wyrażenia regularne
 `re.sub(...)` — zamienia wzorzec na coś innego (tu: na pusty ciąg `''`)
-`re.sub(pattern, replacement, string, count=0)
+`re.sub(pattern, replacement, string, count=0, flags=)
 
-|Parametr|Opis|
-|---|---|
-|`pattern`|Wzorzec (wyrażenie regularne), który ma zostać znaleziony|
-|`replacement`|Tekst, który ma zastąpić znaleziony wzorzec|
-|`string`|Tekst wejściowy, w którym dokonujemy zamiany|
-|`count` _(opcjonalnie)_|Ile razy ma zostać wykonana zamiana (domyślnie 0 = wszystkie)|
+| Parametr                | Opis                                                          |
+| ----------------------- | ------------------------------------------------------------- |
+| `pattern`               | Wzorzec (wyrażenie regularne), który ma zostać znaleziony     |
+| `replacement`           | Tekst, który ma zastąpić znaleziony wzorzec                   |
+| `string`                | Tekst wejściowy, w którym dokonujemy zamiany                  |
+| `count` _(opcjonalnie)_ | Ile razy ma zostać wykonana zamiana (domyślnie 0 = wszystkie) |
+| `flags=re.IGNORECASE`   | Flagi: re.IGNORECASE ignoruje wielkość liter                  |
 `r'[^\w\s]'` — oznacza: wszystko, co **nie jest** (`^`) literą/cyfrą (`\w`) ani spacją (`\s`)
 
 ## Formatowanie kodu

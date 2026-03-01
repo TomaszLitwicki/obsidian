@@ -3,4 +3,5 @@
 - FOMO - Fear of Missing Out: Uczucie, że cały czas coś nas omija, więc cały czas trzeba próbować czegoś nowego, a praca i tak stoi w miejscu.
 - BUYER'S REMORSE - wyrzuty sumienia kupującego: Rozwiązanie wybrane wcale nie jest tym najlepszym :( 
 - PAGINACJA - to proces numerowania kolejnych stron dokumentu, publikacji, a także dzielenia dużych zbiorów danych na mniejsze fragmenty wyświetlane na oddzielnych stronach.
-- 
+- SYNTAKTYKA (składnia) to dział językoznawstwa i semiotyki logicznej badający strukturę wypowiedzeń, relacje między wyrazami oraz formalne zasady łączenia znaków w zdania. Analizuje składnię, szyk wyrazów, związki składniowe (zgoda, rząd, przynależność) oraz kategorie syntaktyczne (nazwy, zdania, funktory), dążąc do określenia poprawności konstrukcji. 
+	- **W logice/informatyce:** Określa reguły formowania poprawnych wyrażeń (np. brak błędu składniowego/syntax error).Syntaktyka przeciwstawiana jest semantyce (znaczeniu) i pragmatyce (użyciu).
