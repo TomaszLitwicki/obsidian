@@ -1,3 +1,11 @@
+## środowisko wirtualne
+`.\.venv\Scripts\activate`					- inicjalizowanie środowiska wirtualnego
+`.\.venv\Scripts\Activate.ps1`
+`deactivate`											- deaktywacja środowiska wirtualnego
+`pip freeze > requirements.txt`		- generowanie requirements.txt
+`pip install -r requirements.txt`	- instalowanie pakietów z requirements.txt
+
+
 ## Sprawdzanie podanej zmiennej
 
 ```

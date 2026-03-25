@@ -1,6 +1,6 @@
 ...i podpowiedzi typów.
 powiązanie dowolnych wyrażeń z argumentami funkcji i zwracanymi wartościami
-`def funkcja (a: 'adnotacja paramteru) -> 'anotacja fukcji':`
+`def funkcja (a: 'adnotacja paramteru') -> 'anotacja fukcji':`
 `a: 'adnotacja zmiennej' = wartość
 
 w PEP 484 adnotacje jako podpowiedzi typów, ponieważ Python jest językiem dynamicznie typowanym a typ zmiennej jest określany w trakcie działania programu. Adnotacje podpowiadają typ użytkownikowi kodu.

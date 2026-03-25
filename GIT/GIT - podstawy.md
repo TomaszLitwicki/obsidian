@@ -47,26 +47,43 @@ wielu plików:
 `git switch -c "nazwa"` - tworzenie nowego brancha c-create
 `git switch nazwa` - przełączanie się na brancha nazwa
 `git merge nowy` - łączenie aktualnego brancha(roboczego) z branchem nowy
+`git branch -m master main` - zmiana nazwy brancha
 
 ## Komendy
 
-| komenda                                      | działanie                                       |
-| -------------------------------------------- | ----------------------------------------------- |
-| `git init`                                   | tworzenie repozytoriun                          |
-| `git status`                                 | info o branchu                                  |
-| `git add`                                    | dodawanie pliku do śledzenia                    |
-| `git commit`                                 | commitowanie do repozytorium                    |
-| `git log`                                    | historia commitów na danym branchu              |
-| `git branch`                                 | pokazuje aktualne branche i \* roboczy          |
-| `git switch nazwa`                           | przechodzi do brancha nazwa                     |
-| `git switch -c "nazwa"`                      | tworzenie brancha                               |
-| `git checkout -b`                            | stara komenda na tworzenie brancha              |
-| `git merge nowy`                             | łączenie z mastera z branchem nowy              |
-| `git push`                                   | wypychanie repozytorium do globalnego           |
-| `git pull`                                   | zaciąganie globalnego repozytorium do lokalnego |
-| `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                      |
-| `git fetch`                                  | porównanie z GitHub'em                          |
+| komenda                                      | działanie                                             |
+| -------------------------------------------- | ----------------------------------------------------- |
+| `git init`                                   | tworzenie repozytoriun                                |
+| `git status`                                 | info o branchu                                        |
+| `git add`                                    | dodawanie pliku do śledzenia                          |
+| `git commit`                                 | commitowanie do repozytorium                          |
+| `git log`                                    | historia commitów na danym branchu                    |
+| `git branch`                                 | pokazuje aktualne branche i \* roboczy                |
+| `git switch nazwa`                           | przechodzi do brancha nazwa                           |
+| `git switch -c "nazwa"`                      | tworzenie brancha                                     |
+| `git checkout -b`                            | stara komenda na tworzenie brancha                    |
+| `git merge nowy`                             | łączenie z mastera z branchem nowy                    |
+| `git push`                                   | wypychanie repozytorium do globalnego (gdy połączone) |
+| `git push -u origin main`                    | połączenie main z origin na stałe i wypchnięce        |
+| `git pull`                                   | zaciąganie globalnego repozytorium do lokalnego       |
+| `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                            |
+| `git fetch`                                  | porównanie z GitHub'em                                |
+|                                              |                                                       |
+| `git remote`                                 | dodawanie zdalnego repozytorium                       |
+| `git stash                                   | schowek chwilowy przed commitem do zmiany brancha     |
+## Dodawanie zdalnego repozytorium
+`git remote add origin https://github.com/TWOJA_NAZWA/NAZWA_REPOZYTORIUM.git`
 
+## usuwanie plików ze śledzenia
+`git rm --cached -r .idea`
+
+## schowek stash
+**`stash`** w Git to taki **tymczasowy schowek na niezatwierdzone zmiany**. Używa się go, aby na chwilę odłożyć aktualny stan plików, wrócić do „czystego” katalogu roboczego i zrobić coś innego, bez robienia normalnego commita. Git zapisuje wtedy stan **working directory** i **indexu**, a potem cofa pliki do stanu z ostatniego commita (`HEAD`).
+`git stash` - skrót do `git stash push`
+`git stash push -m "WIP RAG form validation"` 
+`git stash list` -  Podejrzenie schowanych zmian
+`git stash apply` - Przywrócenie zmian, ale zostawienie ich jeszcze na liście stashy
+`git stash pop` - Przywrócenie zmian i jednoczesne usunięcie ich ze stosu stashy
 ## Weryfikacja stanu repozytorium
 
 | Komenda      | Operuje na        | Cel                   |

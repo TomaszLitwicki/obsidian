@@ -43,9 +43,9 @@ UPDATE nazwa_tabeli SET kolumna1 = 'nowa_wartość', kolumna2 = 'inna_wartość'
 # 4 TABELE ZNORMALIZOWANE - edycja tabel i zmiany
 
 EDYCJA TABEL:
-Edycja istniejących tabel:
-SHOW DATABASES; 
-SHOW TABLES;
+	Edycja istniejących tabel:
+		SHOW DATABASES; 
+		SHOW TABLES;
 
 SHOW CREATE DATABASE nazwa_bazy_danych; - pokazuje kod stworzenia bazy danych.
 SHOW CREATE TABLE nazwa_tabeli; - pokazuje kod stworzenia tabeli.
