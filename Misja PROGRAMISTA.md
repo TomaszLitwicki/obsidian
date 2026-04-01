@@ -51,6 +51,7 @@ Stos technologiczny:
 [[01 - HTML]]
 [[02 - CSS]]
 
+# IT - background
 
 ---
 [[1 - Przydatne skróty]]

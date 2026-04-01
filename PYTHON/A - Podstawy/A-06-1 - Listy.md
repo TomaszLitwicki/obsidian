@@ -25,5 +25,6 @@ count(x) — liczy, ile razy x znajduje się na liście.
 sort() — sortuje listę w miejscu.
 reverse() — odwraca listę w miejscu.
 copy() — płytka kopia listy.
+"separator".join(lista) — łączy elementy listy separatorem (ale tylko str)
 
 #
