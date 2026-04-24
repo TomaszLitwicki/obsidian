@@ -5,6 +5,11 @@
 `pip freeze > requirements.txt`		- generowanie requirements.txt
 `pip install -r requirements.txt`	- instalowanie pakietów z requirements.txt
 
+PythonAnyWhere:
+```
+source ~/katalog_projektu/.venv/bin/activate
+```
+
 
 ## Sprawdzanie podanej zmiennej
 
