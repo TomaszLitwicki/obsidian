@@ -11,11 +11,13 @@
 	b = 3
 	a \** b = 2^3 = 8 
 	pow(a, b) = 2^3 = 8
-Zmienianie wartości zmiennej
-	a = +1
-	a = -3
-	a = \*2
-	a = /4
+Operatory złożonego przypisania:
+	a +=1 {inkrementacja}
+	a -= 3 {dekrementacja}
+	a \*= 2
+	a /= 4
+	a \*\*= 5 
+	a // = 6
 Operatory porównania
 	a == b
 	a >= b

@@ -59,6 +59,7 @@ wielu plików:
 | `git commit`                                 | commitowanie do repozytorium                          |
 | `git log`                                    | historia commitów na danym branchu                    |
 | `git branch`                                 | pokazuje aktualne branche i \* roboczy                |
+| `git branch -d "nazwa_kasowanego"`           | kasowanie brancha                                     |
 | `git switch nazwa`                           | przechodzi do brancha nazwa                           |
 | `git switch -c "nazwa"`                      | tworzenie brancha                                     |
 | `git checkout -b`                            | stara komenda na tworzenie brancha                    |
@@ -70,7 +71,7 @@ wielu plików:
 | `git fetch`                                  | porównanie z GitHub'em                                |
 |                                              |                                                       |
 | `git remote`                                 | dodawanie zdalnego repozytorium                       |
-| `git stash                                   | schowek chwilowy przed commitem do zmiany brancha     |
+| `git stash`                                  | schowek chwilowy przed commitem do zmiany brancha     |
 ## Dodawanie zdalnego repozytorium
 `git remote add origin https://github.com/TWOJA_NAZWA/NAZWA_REPOZYTORIUM.git`
 

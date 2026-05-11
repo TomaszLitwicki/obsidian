@@ -12,8 +12,8 @@ Działania na listach:
 	.count('element') - liczy ilość występowania *elementu*
 	len(lista) - zwraca ilość indeksów w liście
 	.sort() - sortowanie listy
-Najważniejsze metody listy:
 
+**Najważniejsze metody listy:**
 append(x) — dodaje element na koniec listy.
 extend(iterable) — dodaje wiele elementów naraz (dokleja drugą listę).
 insert(i, x) — wstawia element na konkretną pozycję.
