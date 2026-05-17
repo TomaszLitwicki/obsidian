@@ -69,7 +69,7 @@ wielu plików:
 | `git pull`                                   | zaciąganie globalnego repozytorium do lokalnego       |
 | `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                            |
 | `git fetch`                                  | porównanie z GitHub'em                                |
-|                                              |                                                       |
+| `git diff`                                   | porównanie zmian w plikach w                          |
 | `git remote`                                 | dodawanie zdalnego repozytorium                       |
 | `git stash`                                  | schowek chwilowy przed commitem do zmiany brancha     |
 ## Dodawanie zdalnego repozytorium
