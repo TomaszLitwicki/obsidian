@@ -72,6 +72,8 @@ wielu plików:
 | `git diff`                                   | porównanie zmian w plikach w                          |
 | `git remote`                                 | dodawanie zdalnego repozytorium                       |
 | `git stash`                                  | schowek chwilowy przed commitem do zmiany brancha     |
+| `git reset --hard HEAD`                      | przywraca stan z ostatniego HEAD commita              |
+| `git checkout a1b2c3d (main) `               | podejrzenie starego kodu (powrót do main)             |
 ## Dodawanie zdalnego repozytorium
 `git remote add origin https://github.com/TWOJA_NAZWA/NAZWA_REPOZYTORIUM.git`
 

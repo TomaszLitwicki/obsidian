@@ -3,6 +3,11 @@
 `touch plik.txt` - tworzy pusty plik
 `echo "tekst" > plik.txt` - tworzy plik i zapisuje w nim tekst
 `echo "dodawanie" >> plik.txt` - dodaje na końcu w pliku
+
+### katalogów
+`mkdir nowy_katalog` - tworzenie nowego folderu
+`mkdir katalog && cd $_` - tworzy katalog i od razu do niego przechodzi 
+	`$_` - zmienna w linuxie, która podstawia ostatni argument
 ## wyświetlanie zawartości
 `cat plik.txt` - wyświetla zawartość w konsoli
 `less plik.txt` - otwiera długi plik i można przewijać strzałkami
