@@ -23,6 +23,8 @@ Operatory porównania
 	a >= b
 	a < b
 	a != b (*różne*)
+Wartość bezwzględna
+	abs(a)
 ^ - XOR bitowy (alternatywa wkluczająca na poziomie bitów)
 	a = 5 = 101
 	b = 3 = 011
