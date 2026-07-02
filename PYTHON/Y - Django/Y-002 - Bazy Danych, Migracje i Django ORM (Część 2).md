@@ -15,7 +15,7 @@ Modele w Django to klasy Pythona reprezentujące tabele w bazie danych. Każdy a
 
 ### Twoje modele z aplikacji `polls`:
 
-```
+```python
 # polls/models.py
 import datetime
 from django.db import models
@@ -81,7 +81,7 @@ Wpisując w terminalu `python manage.py shell`, uruchamiasz powłokę Pythona ze
 
 ### Podstawowy zestaw zapytań CRUD:
 
-```
+```bash
 from polls.models import Question, Choice
 from django.utils import timezone
 
@@ -124,7 +124,7 @@ Ponieważ model `Choice` posiada klucz obcy do `Question`, instancja pytania ma 
 
 ### Wykorzystanie w konsoli:
 
-```
+```shell
 q = Question.objects.get(pk=1)
 
 # Wyciągnięcie wszystkich odpowiedzi przypisanych do tego pytania:

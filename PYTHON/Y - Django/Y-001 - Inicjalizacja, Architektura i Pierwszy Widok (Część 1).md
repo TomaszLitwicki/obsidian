@@ -37,12 +37,11 @@ djangotutorial/             <-- Katalog główny projektu (kontener)
 
 Przed uruchomieniem poniższych komend upewnij się, że masz aktywowane środowisko wirtualne (`.venv`).
 
-|   |   |
-|---|---|
-|**Komenda**|**Opis**|
-|`django-admin startproject djangotutorial .`|Inicjalizuje nowy projekt o nazwie `djangotutorial` w bieżącym katalogu (kropka na końcu zapobiega tworzeniu zbędnego podkatalogu).|
-|`python manage.py startapp polls`|Tworzy szkielet nowej aplikacji o nazwie `polls`.|
-|`python manage.py runserver`|Uruchamia lokalny serwer deweloperski pod adresem `http://127.0.0.1:8000/`.|
+| **Komenda**                                  | **Opis**                                                                                                                            |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `django-admin startproject djangotutorial .` | Inicjalizuje nowy projekt o nazwie `djangotutorial` w bieżącym katalogu (kropka na końcu zapobiega tworzeniu zbędnego podkatalogu). |
+| `python manage.py startapp polls`            | Tworzy szkielet nowej aplikacji o nazwie `polls`.                                                                                   |
+| `python manage.py runserver`                 | Uruchamia lokalny serwer deweloperski pod adresem `http://127.0.0.1:8000/`.                                                         |
 
 ## 3. Przepływ Żądania (Request ➔ Response) i Pierwszy Widok
 
@@ -61,7 +60,7 @@ graph TD
 
 Widok to funkcja (lub klasa), która przyjmuje obiekt żądania sieciowego (`HttpRequest`) i musi zwrócić obiekt odpowiedzi (`HttpResponse`).
 
-```
+```python
 # polls/views.py
 from django.http import HttpResponse
 
@@ -74,7 +73,7 @@ def index(request):
 
 Tworzymy plik `urls.py` wewnątrz katalogu aplikacji, aby powiązać adres URL z funkcją z pliku `views.py`.
 
-```
+```python
 # polls/urls.py
 from django.urls import path
 from . import views
@@ -84,12 +83,24 @@ urlpatterns = [
     path('', views.index, name='index'), 
 ]
 ```
-
+`path(route, view, kwargs=None, name=None)`
+*  `route` (wzorzec adresu URL) – _wymagany_
+	To ciąg znaków, który określa, jakiego adresu w przeglądarce Django ma szukać.
+	- `''` (pusty string), oznacza to stronę główną danej aplikacji (np. `/polls/`).
+	-  `'<int:question_id>/vote/'`, Django zrobi coś genialnego: dopasuje adresy typu `/polls/5/vote/` lub `/polls/12/vote/`. Część `<int:question_id>` to tzw. **konwerter ścieżki**. Mówi on Django: _„Przechwyć tę część adresu, upewnij się, że to liczba całkowita (`int`) i przekaż ją do widoku pod nazwą `question_id`”_.
+*  `view` (funkcja widoku) – _wymagany_
+	To wskazanie, którą funkcję z pliku `views.py` Django ma wykonać, gdy adres z `route` się zgadza.
+	- Np. `views.detail` lub `views.vote`. Ważne: podajesz tu nazwę funkcji **bez nawiasów okrągłych `()`** na końcu. Nie wywołujesz jej sam – dajesz tylko Django namiar na nią, żeby framework wywołał ją w odpowiednim momencie, automatycznie dorzucając obiekt `request` i przechwycone zmienne (np. `question_id`).
+-  `kwargs` (dodatkowe argumenty) – _opcjonalny_
+	Umożliwia przekazanie dodatkowych danych w postaci słownika (`dict`) bezpośrednio do funkcji widoku. Rzadko używany na początku tutoriala, ale bardzo potężny, gdy chcesz przekazać jakieś stałe konfiguracyjne do widoku.
+-  `name` (unikalna nazwa) – _opcjonalny, ale kluczowy_
+	To nadanie „ksywki” dla tej konkretnej ścieżki (np. `name='detail'`). Dzięki temu w innych miejscach projektu (w kodzie Pythona lub w szablonach HTML) nie musisz wpisywać adresów na sztywno jako tekst (`/polls/5/`). Zamiast tego używasz bezpiecznej nazwy (funkcji `reverse('detail', args=[5])`). Jeśli w przyszłości postanowisz zmienić adres z `/polls/5/` na `/ankiety/pytanie-5/`, zmienisz to **tylko w jednym miejscu w `path()`**, a cały system linków na stronie nie rozsypie się, bo wciąż będzie szukał ścieżki o nazwie `'detail'`.
+	
 ### Krok C: Podłączenie aplikacji do projektu (`djangotutorial/urls.py`)
 
 Musimy poinformować główny projekt, że ma nasłuchiwać adresów z aplikacji `polls`. Używamy do tego funkcji `include()`.
-
-```
+Aplikacje trzeba zarejestrować w `settings.py` w `INSTALLED_APPS`.
+```python
 # djangotutorial/urls.py
 from django.contrib import admin
 from django.urls import include, path
