@@ -1,5 +1,6 @@
 # Django: Dot-lookup i automatyczne wywoływanie metod
 
+**DTL**, czyli **Django Template Language** (Język Szablonów Django)
 System szablonów Django celowo upraszcza składnię, aby oddzielić warstwę prezentacji (HTML) od logiki biznesowej (Python). Dwa najważniejsze mechanizmy tego systemu to **uniwersalna kropka** oraz **brak nawiasów przy wywoływaniu metod**.
 
 ## 1. Uniwersalna kropka (Dot-lookup)

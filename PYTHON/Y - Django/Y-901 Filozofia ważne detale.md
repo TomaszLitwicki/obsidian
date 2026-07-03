@@ -1,0 +1,3 @@
+**`{% csrf_token %}`**
+- **Co robi:** Zabezpiecza aplikację przed atakami typu CSRF (Cross-Site Request Forgery – fałszowanie żądań międzywitrynowych).
+- **Szczegóły:** Django wymaga, aby każdy formularz wysyłany metodą `POST` wewnętrznie posiadał to zabezpieczenie. Ten tag generuje ukryte pole tekstowe (`<input type="hidden" ...>`) ze specjalnym, losowym tokenem kryptograficznym. Serwer sprawdza ten token przy odbiorze danych. Bez tego tagu Django zablokuje formularz i wyrzuci błąd _403 Forbidden_.
