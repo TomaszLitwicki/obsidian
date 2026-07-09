@@ -19,11 +19,8 @@ python manage.py createsuperuser
 Podczas konfiguracji zostaniesz poproszony o podanie:
 
 1. **Nazwy użytkownika** (Username)
-    
 2. **Adresu e-mail** (Email address)
-    
 3. **Hasła** (Password) – _hasło podczas wpisywania w terminalu ze względów bezpieczeństwa będzie niewidoczne_.
-    
 
 > [!warning] **Ważne przy tworzeniu haseł**
 > 
@@ -38,11 +35,8 @@ python manage.py runserver
 ```
 
 1. Wejdź w przeglądarce pod adres: `http://127.0.0.1:8000/admin/`
-    
 2. Zobaczysz domyślny formularz logowania Django.
-    
 3. Wpisz dane swojego superużytkownika.
-    
 
 Po zalogowaniu zobaczysz domyślny panel z dwiema sekcjami: **Groups** (Grupy) oraz **Users** (Użytkownicy). Są to domyślne modele dostarczone przez aplikację systemową `django.contrib.auth`.
 
