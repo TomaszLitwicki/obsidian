@@ -16,6 +16,8 @@
 	`-v` invert match
 	`-n` number of line
 	`-r` recursive(szuka we wszystkich plikach) `grep -r "szukam" .`
+	
+	` grep -E "class|def" lists/tests.py` - pokazuje wszystkie klasy i funkcje w pliku tests.py w katalogu lists
 ## vim - edytor
 `vim plik.txt` -> otwarcie/utworzenie pliku
 `i` -> --INSER-- tryb edycji

@@ -1,4 +1,5 @@
 ## środowisko wirtualne
+`python3 -m venv .venv`    					- tworzenie lokalnego środowiska wirtualnego
 `.\.venv\Scripts\activate`					- inicjalizowanie środowiska wirtualnego
 `.\.venv\Scripts\Activate.ps1`
 `deactivate`											- deaktywacja środowiska wirtualnego

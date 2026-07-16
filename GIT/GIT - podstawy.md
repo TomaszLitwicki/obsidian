@@ -66,6 +66,7 @@ wielu plików:
 | `git merge nowy`                             | łączenie z mastera z branchem nowy                    |
 | `git push`                                   | wypychanie repozytorium do globalnego (gdy połączone) |
 | `git push -u origin main`                    | połączenie main z origin na stałe i wypchnięce        |
+| `git push -u origin inny-branch`             | wysłanie nowego brancha do zdalnego repo              |
 | `git pull`                                   | zaciąganie globalnego repozytorium do lokalnego       |
 | `git clone http://github.com/nazwa/repo.git` | klonowanie repo z GitHub'a                            |
 | `git fetch`                                  | porównanie z GitHub'em                                |
@@ -74,11 +75,21 @@ wielu plików:
 | `git stash`                                  | schowek chwilowy przed commitem do zmiany brancha     |
 | `git reset --hard HEAD`                      | przywraca stan z ostatniego HEAD commita              |
 | `git checkout a1b2c3d (main) `               | podejrzenie starego kodu (powrót do main)             |
+| `git tag nazwa_tagu`                         | tag lekki                                             |
+| `git tag -a tag_opisowy -m "opis tagu"`      | tag opisowy ze wszystkimi informacjami o użytkowniku  |
 ## Dodawanie zdalnego repozytorium
 `git remote add origin https://github.com/TWOJA_NAZWA/NAZWA_REPOZYTORIUM.git`
 
 ## usuwanie plików ze śledzenia
 `git rm --cached -r .idea`
+
+## tagi
+- Wysłanie tego jednego konkretnego taga
+	`git push origin end-of-chapter-05
+- Wysłanie wszystkich stworzonych lokalnie tagów na raz
+	`git push origin --tags
+- Pobranie tegów
+	`git fetch --tags`
 
 ## schowek stash
 **`stash`** w Git to taki **tymczasowy schowek na niezatwierdzone zmiany**. Używa się go, aby na chwilę odłożyć aktualny stan plików, wrócić do „czystego” katalogu roboczego i zrobić coś innego, bez robienia normalnego commita. Git zapisuje wtedy stan **working directory** i **indexu**, a potem cofa pliki do stanu z ostatniego commita (`HEAD`).
