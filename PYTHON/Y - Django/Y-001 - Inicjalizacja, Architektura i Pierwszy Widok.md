@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #architecture #web-dev
-
 ## 1. Filozofia Architektury: Projekt vs Aplikacja
 
 Django opiera się na modularnej architekturze, w której panuje ścisły rozdział ról. Podstawowym założeniem jest podział na **Projekt** oraz **Aplikacje**.
@@ -47,7 +45,7 @@ Przed uruchomieniem poniższych komend upewnij się, że masz aktywowane środow
 
 Kiedy użytkownik wpisuje adres w przeglądarce, Django przechodzi przez precyzyjną ścieżkę, aby dostarczyć odpowiedź.
 
-```
+```mermaid
 graph TD
     A[Przeglądarka użytkownika] -->|1. Żądanie /polls/| B[Główny djangotutorial/urls.py]
     B -->|2. Przekazuje dopasowaną ścieżkę| C[Lokalny polls/urls.py]

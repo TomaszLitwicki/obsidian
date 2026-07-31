@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #database #orm #migrations
-
 ## 1. Konfiguracja Bazy Danych w Django
 
 Po zainicjalizowaniu projektu w pliku `settings.py` znajduje się domyślna konfiguracja bazy danych.

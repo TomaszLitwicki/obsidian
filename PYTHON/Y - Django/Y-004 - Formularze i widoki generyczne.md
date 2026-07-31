@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #forms #views #generic-views #dry
-
 ## 1. Tworzenie Formularza w Szablonie
 
 W celu umożliwienia użytkownikom oddawania głosów, należy utworzyć formularz HTML w szablonie szczegółów pytania (`detail.html`). Formularz ten posłuży do przesłania identyfikatora wybranej odpowiedzi na serwer.

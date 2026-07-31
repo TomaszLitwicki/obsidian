@@ -68,14 +68,17 @@ class HomePageTest(TestCase):
 
 **1. Standardowe asercje bazowe z Pythona (`unittest`)**
 
-|Metoda|Sprawdza|
-|---|---|
-|`self.assertTrue(x)`|czy wyrażenie jest True|
-|`self.assertFalse(x)`|czy jest False|
-|`self.assertIn(a, b)`|czy `a` znajduje się w `b`|
-|`self.assertIsNone(x)`|czy `x is None`|
-|`self.assertGreater(a, b)`|czy `a > b`|
-|`self.assertEqual(a, b)`|czy a == b|
+| Metoda                                             | Sprawdza                                           |
+| -------------------------------------------------- | -------------------------------------------------- |
+| `self.assertTrue(x)`                               | czy wyrażenie jest True                            |
+| `self.assertFalse(x)`                              | czy jest False                                     |
+| `self.assertIn(a, b)`                              | czy `a` znajduje się w `b`                         |
+| `self.assertIsNone(x)`                             | czy `x is None`                                    |
+| `self.assertGreater(a, b)`                         | czy `a > b`                                        |
+| `self.assertEqual(a, b)`                           | czy a == b                                         |
+| `self.assertAlmostAqual(a, b, delta=x)`            | czy a == b +/-x                                    |
+| `self.assertRegex(text, expected_regex, msg=None)` | cze text odpowiada wyrażęniu regularnemu regex[^1] |
+|                                                    |                                                    |
 
 **2. Asercje specjalne od klienta testowego Django (`django.test.TestCase`)**
 
@@ -85,3 +88,9 @@ class HomePageTest(TestCase):
 |`self.assertContains(response, 'tekst')`|Czy podany fragment tekstu występuje w zwróconym przez serwer dokumencie. Pełni rolę inteligentniejszego `assertIn` (sam dekoduje z bajtów i sprawdza status HTTP!).|
 |`self.assertNotContains(response, 'tekst')`|Odwrotność powyższego - czy niechciany komunikat/element na pewno nie wyświetlił się na stronie po operacji.|
 |`self.assertRedirects(response, '/url/')`|Czy po wykonaniu zapytania (najczęściej `POST`) klient został poprawnie przekierowany pod nowy, wyznaczony adres.|
+
+---
+[^1] Pod spodem `self.assertRegex()` używa funkcji `re.search()`, a **nie** `re.match()`. Oznacza to, że wzorzec zostanie znaleziony, nawet jeśli znajduje się **w środku** tekstu. Aby **cały** tekst dokładnie pasował do wzorca (od początku do samego końca), trzeba użyć znaków kotwiczących w  wyrażeniu regularnym:
+- `^` – oznacza początek ciągu znaków.
+- `$` – oznacza koniec ciągu znaków.
+ Przeciwieństwem tej funkcji jest `self.assertNotRegex()`, która sprawdzi, czy dany tekst **nie pasuje** do wzorca.

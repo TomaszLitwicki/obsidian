@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #admin-panel #cms
-
 ## 1. Czym jest Django Admin?
 
 Jedną z największych zalet Django jest automatycznie generowany, w pełni funkcjonalny **panel administracyjny (CMS)**.

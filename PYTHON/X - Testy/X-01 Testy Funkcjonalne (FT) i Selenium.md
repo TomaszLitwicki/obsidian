@@ -1,5 +1,6 @@
 Testy funkcjonalne (często nazywane _End-to-End_ lub _Acceptance Tests_) symulują zachowanie prawdziwego użytkownika w przeglądarce. W kursie wykorzystujemy do tego bibliotekę **Selenium** owiniętą w standardowy moduł Pythona `unittest`.
 
+`python manage.py test nazwa_folderu.nazwa_pliku.NazwaKlasy.nazwa_metody`
 ## Standardowa struktura pliku `functional_tests.py`
 
 ```python

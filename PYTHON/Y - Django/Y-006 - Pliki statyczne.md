@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #static-files #css #frontend
-
 ## 1. Czym są pliki statyczne?
 
 Aplikacje webowe to nie tylko generowany przez serwer kod HTML, ale również dodatkowe zasoby niezbędne do prawidłowego wyświetlania strony: arkusze stylów (CSS), skrypty JavaScript i obrazy. W Django zasoby te określa się mianem **plików statycznych (static files)**.

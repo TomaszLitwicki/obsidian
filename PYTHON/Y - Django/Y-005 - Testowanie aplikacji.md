@@ -1,5 +1,3 @@
-**Tagi:** #django #backend #python #testing #tdd #qa
-
 ## 1. Wprowadzenie do Testów Automatycznych
 
 Testy automatyczne to procedury sprawdzające poprawność działania kodu. Tworzenie testów (np. w metodyce TDD - _Test-Driven Development_) jest kluczową praktyką w inżynierii oprogramowania.
