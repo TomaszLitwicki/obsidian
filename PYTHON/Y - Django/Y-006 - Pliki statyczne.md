@@ -22,7 +22,7 @@ Dzięki temu ścieżka do pliku dla frameworka to jednoznaczne `polls/style.css`
 
 Aby podpiąć nowo utworzony plik CSS (`polls/static/polls/style.css`) do szablonu HTML, należy użyć specjalnych tagów.
 
-```
+```html
 <!-- polls/templates/polls/index.html -->
 
 <!-- 1. Załadowanie tagów statycznych na początku pliku -->
@@ -44,7 +44,7 @@ Zasady dla obrazów są identyczne. Należy umieścić je w odpowiednim katalogu
 > 
 > Aby odwołać się do obrazu z poziomu pliku CSS, należy zawsze używać **ścieżek względnych** (relative paths):
 
-```
+```css
 /* polls/static/polls/style.css */
 
 body {

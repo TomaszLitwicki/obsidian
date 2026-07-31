@@ -10,7 +10,7 @@ Jedną z największych zalet Django jest automatycznie generowany, w pełni funk
 
 Zanim zalogujesz się do panelu, musisz utworzyć konto o najwyższych uprawnieniach. Służy do tego specjalna komenda CLI:
 
-```
+```bash
 python manage.py createsuperuser
 ```
 
@@ -28,7 +28,7 @@ Podczas konfiguracji zostaniesz poproszony o podanie:
 
 Po pomyślnym utworzeniu konta uruchom serwer deweloperski:
 
-```
+```bash
 python manage.py runserver
 ```
 
@@ -42,7 +42,7 @@ Po zalogowaniu zobaczysz domyślny panel z dwiema sekcjami: **Groups** (Grupy) o
 
 Domyślnie Django Admin nie wie o istnieniu Twoich modeli z aplikacji `polls` (takich jak `Question` czy `Choice`). Musisz je jawnie **zarejestrować** w pliku `admin.py` wewnątrz katalogu swojej aplikacji.
 
-```
+```mermaid
 graph LR
     A[models.py: Klasa Question] -->|Rejestracja| B[admin.py: admin.site.register]
     B -->|Generowanie UI| C[Panel Admina: polls/questions]
@@ -52,7 +52,7 @@ graph LR
 
 Otwórz plik `polls/admin.py` i zmodyfikuj go następująco:
 
-```
+```python
 # polls/admin.py
 from django.contrib import admin
 # Importujemy nasz model Question

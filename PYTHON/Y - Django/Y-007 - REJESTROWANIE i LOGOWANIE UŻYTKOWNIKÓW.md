@@ -6,7 +6,7 @@ Django posiada wbudowany, wysoce bezpieczny system zarządzania użytkownikami, 
 
 W głównym pliku projektu należy zaimportować wbudowane ścieżki (tzw. `auth.urls`).
 
-```Python
+```python
 # projekt/urls.py
 from django.urls import include, path
 
@@ -24,7 +24,7 @@ Dzięki temu jednemu wpisowi aplikacja zyskuje automatyczną obsługę endpoint�
 Framework musi wiedzieć, dokąd przekierować użytkownika po pomyślnym zalogowaniu lub wylogowaniu. Odpowiednie stałe należy zdefiniować na końcu głównego pliku konfiguracyjnego.
 
 
-```Python
+```python
 # projekt/settings.py
 
 # Gdzie przekierować po udanym logowaniu (np. strona główna lub panel)
@@ -42,7 +42,7 @@ Widoki wbudowane w Django zawierają kompletną logikę, ale domyślnie nie dost
 
 Domyślnie widok logowania poszukuje szablonu w ścieżce `registration/login.html`.
 
-```HTML
+```html
 <h2>Zaloguj się</h2>
 
 {% if form.errors %}
@@ -58,13 +58,17 @@ Domyślnie widok logowania poszukuje szablonu w ścieżce `registration/login.ht
 </form>
 ```
 
-Zastosowanie tagu `{% csrf_token %}` jest obligatoryjne dla każdego formularza modyfikującego stan i przesyłanego metodą POST.
+Zastosowanie tagu `{% csrf_token %}` jest obligatoryjne dla każdego formularza modyfikującego stan i przesyłanego metodą POST. (Szczegóły w notatce Y-901).
+
+> [!warning] **Brakujące szablony dla pozostałych widoków auth**
+>
+> `include('django.contrib.auth.urls')` podpina nie tylko `login`/`logout`, ale też widoki resetowania i zmiany hasła: `password_change`, `password_change_done`, `password_reset`, `password_reset_done`, `password_reset_confirm`, `password_reset_complete`. Każdy z nich domyślnie szuka własnego szablonu w katalogu `registration/` (np. `registration/password_reset_form.html`). Dopóki nie utworzysz tych plików, wejście na dany adres zakończy się błędem `TemplateDoesNotExist` – samo `login.html` nie wystarczy.
 
 ### Rozpoznawanie stanu użytkownika w szablonach
 
 Obiekt `user` jest automatycznie wstrzykiwany do kontekstu każdego szablonu. Można wykorzystać go do warunkowego wyświetlania treści. Wylogowanie realizuje się zazwyczaj za pomocą formularza przesyłanego metodą POST, co stanowi standard bezpieczeństwa we współczesnych aplikacjach.
 
-```HTML
+```html
 <div>
     {% if user.is_authenticated %}
         <p>Zalogowany jako: {{ user.username }}</p>
@@ -86,7 +90,7 @@ W przeciwieństwie do logowania, Django nie dostarcza wbudowanego widoku (endpoi
 Do wdrożenia rejestracji zaleca się wykorzystanie widoków generycznych z modułu `django.views.generic`.
 ### Implementacja widoku rejestracji
 
-```Python
+```python
 # aplikacja/views.py
 from django.urls import reverse_lazy
 from django.views import generic
@@ -101,7 +105,31 @@ class SignUpView(generic.CreateView):
     template_name = 'registration/signup.html'
 ```
 
-Należy następnie podpiąć ten widok w pliku `urls.py` i stworzyć analogiczny plik HTML z formularzem (`templates/registration/signup.html`).
+Należy następnie podpiąć ten widok w pliku `urls.py` (np. `path('signup/', views.SignUpView.as_view(), name='signup')`) i stworzyć plik HTML z formularzem pod ścieżką wskazaną w `template_name`.
+
+### Szablon rejestracji (`registration/signup.html`)
+
+`UserCreationForm` to zwykły Django `Form` (a właściwie `ModelForm`), więc renderuje się dokładnie tak samo jak formularz logowania – przez `{{ form.as_p }}`. Nie trzeba ręcznie wypisywać pól `username`/`password1`/`password2`.
+
+```html
+<h2>Zarejestruj się</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Utwórz konto</button>
+</form>
+```
+
+> [!important] **Dlaczego `template_name` trzeba podać jawnie?**
+>
+> `LoginView` to specyficzny, gotowy widok wbudowany w Django – ma na sztywno zaszyty domyślny szablon `registration/login.html`, więc działa "od ręki" bez ustawiania `template_name`.
+>
+> `SignUpView` u nas dziedziczy po generycznym `CreateView`, który **nie zna** żadnej konwencji `registration/*`. Jego domyślna reguła nazewnictwa szablonu to `<app_label>/<nazwa_modelu>_form.html` – a ponieważ `UserCreationForm` operuje na modelu `User` z aplikacji `auth`, bez jawnego `template_name` Django szukałoby `auth/user_form.html`, czyli ścieżki zupełnie nieintuicyjnej i niepasującej do reszty szablonów logowania.
+>
+> Dlatego w `SignUpView` **musisz** samodzielnie ustawić `template_name = 'registration/signup.html'` (nazwa pliku – `signup.html` czy `register.html` – jest tu Twoim wyborem, byle zgadzała się z tym, co wpiszesz w `template_name`).
 
 ## 4. Zabezpieczanie Widoków (Restrykcje dostępu)
 
@@ -114,7 +142,7 @@ Często zachodzi potrzeba ograniczenia dostępu do wybranych podstron wyłączni
 ### A. Widoki Funkcyjne (FBV)
 
 Dla klasycznych funkcji wykorzystuje się dekorator `@login_required`.
-```Python
+```python
 # aplikacja/views.py
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
@@ -133,7 +161,7 @@ W klasach (np. `ListView`, `DetailView`) stosuje się tzw. domieszkę (mixin) o 
 > Zgodnie ze sposobem rozwiązywania metod w Pythonie (MRO), `LoginRequiredMixin` **musi** znajdować się jako pierwszy argument na liście klas bazowych (po lewej stronie).
 
 
-```Python
+```python
 # aplikacja/views.py
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
@@ -146,7 +174,7 @@ class ChronionyWidok(LoginRequiredMixin, generic.TemplateView):
 
 Poniższy diagram obrazuje uproszczony cykl decyzyjny przy żądaniu dostępu do zabezpieczonego widoku:
 
-```
+```mermaid
 graph TD
     A[Żądanie HTTP] --> B{Czy widok jest chroniony?}
     B -->|Nie| C[Wyrenderowanie widoku]

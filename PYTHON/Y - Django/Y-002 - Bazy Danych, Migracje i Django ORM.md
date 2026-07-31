@@ -55,7 +55,7 @@ class Choice(models.Model):
 
 Migracje w Django to pliki, które tłumaczą zmiany w kodzie Pythona (`models.py`) na polecenia SQL modyfikujące bazę danych.
 
-```
+```mermaid
 graph TD
     A[Krok 1: Edycja models.py] -->|python manage.py makemigrations| B[Krok 2: Generowanie pliku migracji]
     B -->|python manage.py migrate| C[Krok 3: Wykonanie zmian w bazie SQLite]
@@ -63,15 +63,14 @@ graph TD
 
 ### Tabela przydatnych poleceń migracji:
 
-|   |   |   |
-|---|---|---|
-|**Komenda**|**Co robi?**|**Kiedy używać?**|
-|`python manage.py makemigrations`|Generuje plik migracji w folderze `migrations/` na podstawie zmian w `models.py`.|Zawsze po zmianie lub dodaniu modeli.|
-|`python manage.py makemigrations --dry-run`|Pokazuje, jakie migracje zostałyby utworzone, bez fizycznego zapisu plików.|Aby sprawdzić, co Django chce zrobić.|
-|`python manage.py makemigrations --check`|Sprawdza, czy są jakieś zmiany w modelach, które nie zostały zapisane do migracji.|Przydatne w systemach CI/CD lub przed commitem.|
-|`python manage.py sqlmigrate polls 0001`|Pokazuje czysty kod SQL, jaki Django wygeneruje dla danej migracji.|Do debugowania i dla administratorów baz danych.|
-|`python manage.py migrate`|Wykonuje wszystkie zaległe migracje w bazie danych.|Po pobraniu nowego kodu lub po `makemigrations`.|
-|`python manage.py showmigrations`|Wyświetla status wszystkich migracji w projekcie.|Aby sprawdzić, co już zostało wgrane do bazy.|
+| **Komenda**                                 | **Co robi?**                                                                       | **Kiedy używać?**                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `python manage.py makemigrations`           | Generuje plik migracji w folderze `migrations/` na podstawie zmian w `models.py`.  | Zawsze po zmianie lub dodaniu modeli.            |
+| `python manage.py makemigrations --dry-run` | Pokazuje, jakie migracje zostałyby utworzone, bez fizycznego zapisu plików.        | Aby sprawdzić, co Django chce zrobić.            |
+| `python manage.py makemigrations --check`   | Sprawdza, czy są jakieś zmiany w modelach, które nie zostały zapisane do migracji. | Przydatne w systemach CI/CD lub przed commitem.  |
+| `python manage.py sqlmigrate polls 0001`    | Pokazuje czysty kod SQL, jaki Django wygeneruje dla danej migracji.                | Do debugowania i dla administratorów baz danych. |
+| `python manage.py migrate`                  | Wykonuje wszystkie zaległe migracje w bazie danych.                                | Po pobraniu nowego kodu lub po `makemigrations`. |
+| `python manage.py showmigrations`           | Wyświetla status wszystkich migracji w projekcie.                                  | Aby sprawdzić, co już zostało wgrane do bazy.    |
 
 ## 4. Django ORM API (Konsola / Shell)
 
@@ -79,7 +78,7 @@ Wpisując w terminalu `python manage.py shell`, uruchamiasz powłokę Pythona ze
 
 ### Podstawowy zestaw zapytań CRUD:
 
-```bash
+```python
 from polls.models import Question, Choice
 from django.utils import timezone
 
@@ -122,7 +121,7 @@ Ponieważ model `Choice` posiada klucz obcy do `Question`, instancja pytania ma 
 
 ### Wykorzystanie w konsoli:
 
-```shell
+```python
 q = Question.objects.get(pk=1)
 
 # Wyciągnięcie wszystkich odpowiedzi przypisanych do tego pytania:

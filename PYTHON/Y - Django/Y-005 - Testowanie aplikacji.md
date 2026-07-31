@@ -15,7 +15,7 @@ Należy utworzyć test weryfikujący to niepożądane zachowanie, a następnie z
 ### Definiowanie testu (`tests.py`)
 Zaleca się umieszczanie testów w dedykowanym pliku `tests.py` wewnątrz katalogu aplikacji. Framework automatycznie odnajdzie klasy dziedziczące po `django.test.TestCase`.
 
-```
+```python
 # polls/tests.py
 import datetime
 from django.test import TestCase
@@ -40,7 +40,7 @@ class QuestionModelTests(TestCase):
 
 Po uruchomieniu testu i jego niepowodzeniu (tzw. faza _Red_), należy zmodyfikować kod produkcyjny, aby test zakończył się sukcesem (faza _Green_).
 
-```
+```python
 # polls/models.py
 def was_published_recently(self):
     now = timezone.now()
@@ -53,7 +53,7 @@ def was_published_recently(self):
 
 Do egzekucji testów służy wbudowane polecenie narzędzia `manage.py`.
 
-```
+```bash
 python manage.py test polls
 ```
 
@@ -73,7 +73,7 @@ Należy upewnić się, że widoki generyczne (`IndexView`, `DetailView`) nie wy�
 
 ### Przykładowy test dla widoku głównego:
 
-```
+```python
 # polls/tests.py (fragment)
 from django.urls import reverse
 

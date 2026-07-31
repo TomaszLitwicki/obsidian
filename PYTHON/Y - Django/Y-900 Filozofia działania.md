@@ -48,7 +48,7 @@ Wyobraźmy sobie obiekt zamówienia ze sklepu internetowego (`zamowienie`), któ
 ### Przykład 2: Pobieranie powiązanych danych w pętli
 Bardzo często metody zwracają listy obiektów, które chcemy od razu wyświetlić na stronie:
 
-```Django
+```html
 {% for ksiazka in autor.pobierz_wszystkie_ksiazki %}
     <li>{{ ksiazka.tytul }}</li>
 {% endfor %}

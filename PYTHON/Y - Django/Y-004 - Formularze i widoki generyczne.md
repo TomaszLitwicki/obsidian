@@ -2,7 +2,7 @@
 
 W celu umożliwienia użytkownikom oddawania głosów, należy utworzyć formularz HTML w szablonie szczegółów pytania (`detail.html`). Formularz ten posłuży do przesłania identyfikatora wybranej odpowiedzi na serwer.
 
-```
+```html
 <!-- polls/templates/polls/detail.html -->
 <form action="{% url 'polls:vote' question.id %}" method="post">
     <!-- Wymagane zabezpieczenie przed atakami CSRF -->
@@ -33,7 +33,7 @@ W celu umożliwienia użytkownikom oddawania głosów, należy utworzyć formula
 
 Gdy formularz przesyła dane żądaniem POST na adres powiązany z widokiem `vote`, niezbędne jest ich odebranie, weryfikacja, aktualizacja bazy danych oraz zwrócenie odpowiedniej odpowiedzi HTTP.
 
-```
+```python
 # polls/views.py
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
@@ -71,7 +71,7 @@ Widok `vote` po prawidłowym zapisaniu danych **nie wykorzystuje** funkcji `rend
 > 
 > Zastosowanie przekierowania (**Redirect**) wymusza na przeglądarce wykonanie nowego żądania GET pod nowo wskazany adres URL, co czyni proces odświeżania strony całkowicie bezpiecznym.
 
-```
+```mermaid
 graph TD
     A[Formularz HTML] -->|Żądanie POST| B[Widok: Zapis do bazy]
     B -->|Zwraca: 302 Redirect| C[Przeglądarka]
@@ -96,7 +96,7 @@ Framework Django udostępnia mechanizm **Widoków Generycznych**, który automat
 
 W celu skorzystania z wbudowanych widoków generycznych, w konfiguracji routingu (`urls.py`) należy zmienić nazwę przechwytywanej zmiennej z `<int:question_id>` na `<int:pk>` (gdzie `pk` oznacza _Primary Key_, czyli klucz główny tabeli).
 
-```
+```python
 # polls/urls.py
 from django.urls import path
 from . import views
@@ -115,7 +115,7 @@ urlpatterns = [
 
 Dotychczasowe widoki funkcyjne (`index`, `detail`, `results`) należy usunąć i zastąpić klasami dziedziczącymi z modułu `generic`:
 
-```
+```python
 # polls/views.py
 from django.views import generic
 from .models import Question
